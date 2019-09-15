@@ -25,7 +25,10 @@ class PropertyFixtures extends Fixture
                 ->setSold(false)
                 ->setSurface($faker->numberBetween(40,400))
                 ->setAdress($faker->address)
+                ->setFilename('filename.png')
+                ->setUpdatedAt(new \DateTime('now'))
                 ->setCity($faker->city);
+
             $manager->persist($property);
         }
         $manager->flush();

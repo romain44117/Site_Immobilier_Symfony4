@@ -39,10 +39,10 @@ class AdminOptionController extends AbstractController
             $entityManager->persist($option);
             $entityManager->flush();
 
-            return $this->redirectToRoute('option.index');
+            return $this->redirectToRoute('admin_option_index');
         }
 
-        return $this->render('option/new.html.twig', [
+        return $this->render('admin/option/new.html.twig', [
             'option' => $option,
             'form' => $form->createView(),
         ]);
@@ -82,6 +82,6 @@ class AdminOptionController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('admin/option_index');
+        return $this->redirectToRoute('admin_option_index');
     }
 }
